@@ -1,0 +1,8 @@
+.btn, h1, h3, div{
+    display: flex;
+    justify-content:center;
+    
+}
+div{
+    margin: 15px;
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"> 
+</head>
+<body>
+    <h1>Submitted Info</h1>
+    <h3>Name: {{result.name}}</h3>
+    <h3>Dojo Location: {{result.location}}</h3>
+    <h3>Language: {{result.language}}</h3>
+    <div class="btn">
+        <a href="/" class="btn btn-primary">Go Back</a>
+    </div>
+</body>
+</html>

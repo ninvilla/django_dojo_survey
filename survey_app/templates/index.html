@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Dojo Survey</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <form action="/survey" method="POST">  
+        {% csrf_token %}
+        <h1>Dojo Survey</h1>
+        <div class="wrapper">
+            <div>
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div>
+                <label for="location">Dojo Location:</label>
+                <select name="location" id="location">
+                    {% for loc in locations %}
+                    <option value="{{ loc }}">{{ loc }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div>
+                <label for="language">Favorite Language:</label>
+                <select name="language" id="language">
+                    {% for lang in languages %}
+                    <option value="{{ lang }}">{{ lang }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div class="btn">
+            <button class="btn btn-primary">View Results</button>
+        </div>
+        
+    </form>
+</body>
+</html>
